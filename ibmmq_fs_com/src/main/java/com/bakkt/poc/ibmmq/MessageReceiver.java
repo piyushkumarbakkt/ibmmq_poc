@@ -16,18 +16,18 @@ import javax.jms.TextMessage;
 public class MessageReceiver {
 
 
-    @JmsListener(destination = "DEV.QUEUE.1", containerFactory = "jmsListenerContainerFactory")
+    @JmsListener(destination = "DEV.QUEUE.1")
     public void listener1(String message) {
         log.info("Message received by listener1 {}", message);
     }
 
-    @JmsListener(destination = "DEV.QUEUE.1", containerFactory = "jmsListenerContainerFactory")
+    @JmsListener(destination = "DEV.QUEUE.1")
     public void listener2(String message) {
 
         log.info("Message received by listener2 {}", message);
     }
 
-    @JmsListener(destination = "DEV.QUEUE.1", containerFactory = "jmsListenerContainerFactory")
+    @JmsListener(destination = "DEV.QUEUE.1")
     public void listener3(String message) {
 
         log.info("Message received by listener3 {}", message);

@@ -3,16 +3,11 @@ package com.bakkt.poc.ibmmq;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.jms.JmsException;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.core.MessageCreator;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.Session;
 import java.util.Random;
 
 @Component
@@ -25,11 +20,6 @@ public class MessageSender {
 
     @Value("${ibm.mq.queue}")
     private String destination;
-
-
-    /*public void sendMessage() {
-        jmsTemplate.send(destination, session -> session.createTextMessage("ABC"));
-    }*/
 
     @Scheduled(initialDelay = 5000, fixedDelay = 5000)
     public void sendMessage() {
